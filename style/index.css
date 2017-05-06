@@ -13,6 +13,22 @@ li
 {
     box-sizing: border-box;
 }
+a
+{
+    cursor: pointer;
+}
+a:hover
+{
+    -webkit-transition: all .3s;
+         -o-transition: all .3s;
+            transition: all .3s;
+
+    opacity: .7;
+}
+p
+{
+    letter-spacing: 2px;
+}
 .top
 {
     width: 10rem;
@@ -28,23 +44,28 @@ li
 
     width: 10rem;
 
-    -webkit-transition: all .3s;
-         -o-transition: all .3s;
-            transition: all .3s;
+    -webkit-transition: height .1s;
+         -o-transition: height .1s;
+            transition: height .1s;
 
     background-color: #fff;
 }
 .nav_list_button
 {
     position: absolute;
+    z-index: 2;
     right: 0rem;
 
     width: 1rem;
     height: 1rem;
 
     cursor: pointer;
+    -webkit-transition: all .2s;
+         -o-transition: all .2s;
+            transition: all .2s;
 
-    background-color: rgba(0,0,0,.5);
+    background-color: #e6e6e6;
+    box-shadow: 0 -3px 1px 3px rgba(0,0,0,.1);
 }
 #nav_tittle
 {
@@ -63,10 +84,50 @@ li
     border-bottom: 2px solid #e6e6e6;
     background-color: #e6e6e6;
 }
-.nav_list_added > li,.nav_list_avaliable > li
+.nav_list_firstTag
+{
+    position: relative;
+    z-index: 0;
+
+    float: left;
+
+    width: 10rem;
+    height: 1rem;
+
+    background-color: #e6e6e6;
+}
+.nav_list_firstTag > li
+{
+    font-size: .45rem;
+    line-height: 1rem;
+
+    float: left;
+    float: left;
+
+    width: 2.2rem;
+    height: 1rem;
+
+    -webkit-transition: all .3s;
+         -o-transition: all .3s;
+            transition: all .3s;
+    text-align: center;
+}
+.nav_list_added,
+.nav_list_avaliable
+{
+    float: left;
+
+    min-height: 1rem;
+
+    -webkit-transition: all .3s;
+         -o-transition: all .3s;
+            transition: all .3s;
+}
+.nav_list_added > li,
+.nav_list_avaliable > li
 {
     font-size: .4rem;
-    line-height: 0.4rem;
+    line-height: .4rem;
 
     float: left;
 
@@ -74,35 +135,152 @@ li
     height: 1.4rem;
     padding: .4rem 0rem;
 
+    -webkit-transition: all .3s;
+         -o-transition: all .3s;
+            transition: all .3s;
     text-align: center;
 
     background-color: rgba(255,255,255,1);
 }
-.added_tag
+a.added_tag
 {
-	display: inline-block;
-	vertical-align: center;
-	width: inherit;
-	height: .6rem;
-	line-height: .6rem;
-	border-left: 1px solid #e6e6e6;
-	border-right: 1px solid #e6e6e6;
+    line-height: .6rem;
+
+    display: inline-block;
+
+    width: inherit;
+    height: .6rem;
+
+    -webkit-transition: all .1s;
+         -o-transition: all .1s;
+            transition: all .1s;
+    vertical-align: center;
+
+    border-right: 1px solid #e6e6e6;
+    border-left: 1px solid #e6e6e6;
 }
-.added_tag:hover
+a.first_tag
 {
-	color: red;
+    line-height: .6rem;
+
+    display: inline-block;
+
+    width: inherit;
+    height: .6rem;
+
+    -webkit-transition: all .1s;
+         -o-transition: all .1s;
+            transition: all .1s;
+    vertical-align: center;
 }
 .swing
 {
+    overflow: hidden;
+
     width: 10rem;
     height: 6rem;
-
-    background-color: yellow;
 }
-.switch
+.swing_list
 {
+    position: relative;
+
+    float: left;
+    overflow: hidden;
+
+    min-width: 10rem;
+    height: 6rem;
+}
+.swing_list > li
+{
+    float: left;
+
+    width: 10rem;
+    height: 6rem;
+}
+.swing_list > li img
+{
+    float: left;
+
+    width: 100%;
+    height: 100%;
+}
+.news_switch
+{
+    margin-bottom: .5rem;
+    clear: both;
+
     width: 10rem;
     height: 1rem;
 
     background-color: #aaa;
+}
+.news_list
+{
+    width: 10rem;
+    min-height: 2.5rem;
+}
+.news_list p.news_tittle
+{
+    font-size: .4rem;
+    display: inline-block;
+    line-height: 1;
+    height: .4rem;
+    overflow: hidden;
+    float: left;
+    width: 70%;
+    margin-top: .1rem;
+    padding-left: .1rem;
+}
+.news_list p.news_description
+{
+    font-size: .2rem;
+    display: inline-block;
+    line-height: 1;
+    height: 1rem;
+    overflow: hidden;
+    float: left;
+    width: 70%;
+    margin-top: .1rem;
+    padding-left: .1rem;
+}
+.news_list p.news_post
+{
+    font-size: .2rem;
+    display: inline-block;
+    line-height: 1;
+    height: .4rem;
+    overflow: hidden;
+    float: left;
+    text-align: right;
+    width: 70%;
+    margin-top: .1rem;
+    padding-left: .1rem;
+}
+p.heat_news
+{
+    box-sizing: border-box;
+    font-size: .5rem;
+    display: inline-block;
+    line-height: 1;
+    overflow: hidden;
+    float: left;
+    width: 70%;
+    height: 50%;
+    margin: .25rem;
+}
+span.news_type
+{
+    margin-right: .1rem;
+}
+.news_list > li
+{
+    width: 10rem;
+    height: 2.5rem;
+    padding: .2rem;
+}
+.news_list > li img
+{
+    height: 100%;
+    width: 25%;
+    float: left;
 }
