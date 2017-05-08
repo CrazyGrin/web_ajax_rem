@@ -6,7 +6,8 @@ let nav_button = document.querySelector('.nav_list_button'),
 	nav_list_firstTag = document.querySelector('.nav_list_firstTag'),
 	nav_change = 0,
 	nav_list_added = document.querySelector('.nav_list_added'),
-	nav_list_avaliable = document.querySelector('.nav_list_avaliable');
+	nav_list_avaliable = document.querySelector('.nav_list_avaliable'),
+	swing_list = document.querySelector('.swing_list');
 
 nav.style.setProperty('height', '1rem');
 
@@ -90,6 +91,8 @@ nav_button.addEventListener('click', () => {
 			for (let i = 0; i < jsonObj.length; i++) {
 				swing_list.innerHTML = swing_list.innerHTML + "<li><img src='" + jsonObj[i].imgURL + "'></li>";
 			}
+
+			swing(jsonObj.length);
 		}
 	});
 })();
@@ -114,7 +117,7 @@ nav_button.addEventListener('click', () => {
 	});
 })();
 
-function createDom(type, text = '', classname = '') {
+let createDom = (type, text = '', classname = '') => {
 	let domNode = document.createElement(type),
 		textNode = document.createTextNode(text);
 
@@ -123,4 +126,17 @@ function createDom(type, text = '', classname = '') {
 		domNode.className = classname;
 	}
 	return domNode;
-}
+};
+
+let swing = (imgNum) => {
+	let location = 0;
+	setInterval(function() {
+		if (location != (imgNum-1)*10) {
+			location = location + 10;
+			swing_list.style.setProperty('right',location+"rem");
+		} else {
+			location = 0;
+			swing_list.style.setProperty('right','0rem');
+		};
+	}, 3000);
+};
